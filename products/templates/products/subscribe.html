@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+{% block title %}Subscribe{% endblock %}
+
+{% block content %}
+<div class="container text-center mt-5">
+    <h1>Subscribe to Access the Dashboard</h1>
+    <p>To access the seller dashboard, you need to subscribe by entering a valid voucher code.</p>
+
+    <form method="post">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label for="voucher" class="form-label">Voucher Code</label>
+            <input type="text" id="voucher" name="voucher" class="form-control" placeholder="Enter voucher code" required>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit Payment</button>
+    </form>
+
+    <div class="mt-4">
+        <p class="text-muted">Use the voucher code to complete the subscription.</p>
+    </div>
+</div>
+{% endblock %}
